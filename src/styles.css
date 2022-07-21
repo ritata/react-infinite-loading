@@ -1,0 +1,39 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.getButton button {
+  width: 250px;
+  height: 50px;
+  background-color: hotpink;
+  border-radius: 12px;
+  border-color: transparent;
+  display: inline-block;
+  color: ivory;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+}
+
+.contentList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contentList img {
+  width: 350px;
+  height: 250px;
+  display: block;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+}
+
+.loader {
+  border: 1px solid red;
+  background-image: url("https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-6.jpg");
+  background-size: contain;
+}

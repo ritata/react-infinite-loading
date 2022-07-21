@@ -5,7 +5,7 @@ import { morePage } from "./constants";
 import useInfiniteScroll from "./useInfiniteScroll";
 import LoadingSpinner from "./LoadingSpinner";
 
-const GetImageListContent = async (page, contentDispatch, pageDispatch) => {
+const getImageListContent = async (page, contentDispatch, pageDispatch) => {
   // setIsLoading(true);
   contentDispatch({ type: fetchingStatus, fetching: true });
   getImageList(page, 20)
@@ -65,7 +65,7 @@ const pageReducer = (state, action) => {
 
 const useFetchImg = (page, imgDispatch, pageDispatch) => {
   useEffect(() => {
-    GetImageListContent(page, imgDispatch, pageDispatch);
+    getImageListContent(page, imgDispatch, pageDispatch);
   }, [page, imgDispatch, pageDispatch]);
 };
 
@@ -88,7 +88,11 @@ export default function App() {
       <div className="contentListWrapper">
         <ImageContentList list={imgData.imgs} />
       </div>
-      {imgData.fetching === true && <LoadingSpinner type="chase" />}
+      {imgData.fetching === true && (
+        <div style={{ position: "relative" }}>
+          <LoadingSpinner type="chase" />
+        </div>
+      )}
       {isBottomBoundaryExist && (
         <div
           ref={bottomBoundaryRef}
